@@ -454,7 +454,7 @@ Use SHTML to output HTML tags, while executing XSS filtering, then it can filter
 <p>Generally, SSRF are common in that developers directly request the URL resources passed in by the client on the server side. Once an attacker passes in some internal URLs, an SSRF attack can be initiated.</p>
 <h3 id="how-to-protect-2"><a class="markdown-anchor" href="#how-to-protect-2">#</a> How to Protect</h3>
 <p>Usually, we will prevent SSRF attacks based on the IP blacklist of intranets. By filtering the IP addresses obtained after resolving domain names, we prohibit access to internal IP addresses to prevent SSRF attacks.</p>
-<p>The framework provides the <code>safeCurl</code> method on <code>ctx</code>, ʻapp<code>and</code>agent<code>, which will filter the specified intranet IP address while doing the network request. In additon of the method are the same as</code>curl`.</p>
+<p>The framework provides the <code>safeCurl</code> method on <code>ctx</code>, ʻapp<code>and</code>agent<code>, which will filter the specified intranet IP address while doing the network request. In additon of the method are the same as </code>curl`.</p>
 <ul>
 <li><code>ctx.safeCurl(url, options)</code></li>
 <li><code>app.safeCurl(url, options)</code></li>

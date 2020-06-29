@@ -245,12 +245,12 @@ mobileTrigger.onclick = function(e) {
 <p>Request is a <strong>request level object</strong>, inherited from <a href="http://koajs.com/#request" target="_blank" rel="noopener">Koa.Request</a>. Encapsulates the Node.js native HTTP Request object, and provides a set of helper methods to get commonly used parameters of HTTP requests.</p>
 <p>Response is a <strong>request level object</strong>, inherited from <a href="http://koajs.com/#response" target="_blank" rel="noopener">Koa.Response</a>. Encapsulates the Node.js native HTTP Response object, and provides a set of helper methods to set the HTTP response.</p>
 <h3 id="how-to-get-3"><a class="markdown-anchor" href="#how-to-get-3">#</a> How to Get</h3>
-<p>We can get the Request(<code>ctx.request</code>) and Response (<code>ctx.response</code>) instances of the current request on the Context instance.</p>
+<p>We can get the Request(<code>ctx.request</code>) and Response (<code> ctx.response</code>) instances of the current request on the Context instance.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// app/controller/user.js</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserController</span> <span class="keyword">extends</span> <span class="title">Controller</span> </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> fetch() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; app, ctx &#125; = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">const</span> id = ctx.request.query.id;</span><br><span class="line">    ctx.response.body = app.cache.get(id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><a href="http://koajs.com" target="_blank" rel="noopener">Koa</a> will proxy some methods and properties of Request and Response on Context, see <a href="http://koajs.com/#context" target="_blank" rel="noopener">Koa.Context</a>.</li>
-<li><code>ctx.request.query.id</code> and<code>ctx.query.id</code> are equivalent in the above example , <code>ctx.response.body =</code> and <code>ctx.body =</code> are equivalent.</li>
-<li>It should be noted that get the body of POST should use <code>ctx.request.body</code> instead of<code>ctx.body</code>.</li>
+<li><code>ctx.request.query.id</code> and<code> ctx.query.id</code> are equivalent in the above example , <code>ctx.response.body =</code> and <code>ctx.body =</code> are equivalent.</li>
+<li>It should be noted that get the body of POST should use <code>ctx.request.body</code> instead of<code> ctx.body</code>.</li>
 </ul>
 <h2 id="controller"><a class="markdown-anchor" href="#controller">#</a> Controller</h2>
 <p>Egg provides a Controller base class and recommends that all <a href="./controller.html">Controller</a> inherit from the base class. The Controller base class has the following properties:</p>
@@ -281,7 +281,7 @@ mobileTrigger.onclick = function(e) {
 <h2 id="config"><a class="markdown-anchor" href="#config">#</a> Config</h2>
 <p>We recommend application development to follow the principle of configuration and code separation, put hard-coded business in configuration file, and the configuration file supports different runtime environments using different configurations, it is very convenient to use it. the framework, plugin and application-level configurations are available via the Config object. For configuration of Egg, read <a href="./config.html">Configuration</a> in detail.</p>
 <h3 id="how-to-get-5"><a class="markdown-anchor" href="#how-to-get-5">#</a> How to Get</h3>
-<p>We can get the config object from the Application instance via <code>app.config</code>, or get the config object via<code>this.config</code> on the instance of Controller, Service or Helper.</p>
+<p>We can get the config object from the Application instance via <code>app.config</code>, or get the config object via<code> this.config</code> on the instance of Controller, Service or Helper.</p>
 <h2 id="logger"><a class="markdown-anchor" href="#logger">#</a> Logger</h2>
 <p>Egg builds in powerful <a href="../core/logger.html">logger</a>, it is very convenient to print a variety of levels of logs to the corresponding log file, each logger object provides 4 level methods:</p>
 <ul>

@@ -225,6 +225,7 @@ mobileTrigger.onclick = function(e) {
 <li>${app_root}/config</li>
 <li>${app_root}/mocks</li>
 <li>${app_root}/mocks_proxy</li>
+<li>${app_root}/app.js</li>
 </ul>
 <blockquote>
 <p>set <code>config.development.overrideDefault</code> to <code>true</code> to skip defaults merge.</p>
@@ -233,6 +234,7 @@ mobileTrigger.onclick = function(e) {
 <ul>
 <li>${app_root}/app/view</li>
 <li>${app_root}/app/assets</li>
+<li>${app_root}/app/public</li>
 </ul>
 <p>Developer can use <code>config.reloadPattern</code>(<a href="https://github.com/sindresorhus/multimatch" target="_blank" rel="noopener">multimatch</a>) to control whether to reload.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// config/config.default.js</span></span><br><span class="line">exports.development = &#123;</span><br><span class="line">  <span class="comment">// don't reload when ts fileChanged</span></span><br><span class="line">  <span class="comment">// https://github.com/sindresorhus/multimatch</span></span><br><span class="line">  reloadPattern: [<span class="string">'**'</span>, <span class="string">'!**/*.ts'</span>],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
